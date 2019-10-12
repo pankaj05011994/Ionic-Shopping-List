@@ -1,7 +1,7 @@
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Injectable } from "@angular/core";
 
-import Item from '../../models/item/item.interface';
+import { Item } from '../../models/item/item.interface';
 
 @Injectable()
 

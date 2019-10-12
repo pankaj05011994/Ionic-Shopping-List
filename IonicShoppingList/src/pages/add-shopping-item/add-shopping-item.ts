@@ -3,7 +3,7 @@ import { ToastService } from './../../services/toast/toast.service';
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Item } from '../../models/item/item.interface';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 
 /**
  * Generated class for the AddShoppingItemPage page.
@@ -12,7 +12,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-add-shopping-item',
   templateUrl: 'add-shopping-item.html',
@@ -38,7 +38,7 @@ export class AddShoppingItemPage {
   addItem(item : Item) {
 this.shoppingListService.addItem(item).then((ref) => {
   this.toast.show(`${item.name} is added! `, 1000);
-  this.navCtrl.setRoot('HomePage', {key: ref.key});
+  this.navCtrl.setRoot(HomePage, {key: ref.key});
 })
   }
 

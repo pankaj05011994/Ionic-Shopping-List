@@ -1,3 +1,6 @@
+import { EditShoppingListPage } from './../pages/edit-shopping-list/edit-shopping-list';
+import { AddShoppingItemPage } from './../pages/add-shopping-item/add-shopping-item';
+import { HomePage } from './../pages/home/home';
 import { ToastService } from './../services/toast/toast.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -15,8 +18,10 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
 
 @NgModule({
   declarations: [
-    MyApp
-
+    MyApp,
+    HomePage,
+    AddShoppingItemPage,
+    EditShoppingListPage
   ],
   imports: [
     BrowserModule,
@@ -27,7 +32,10 @@ import { ShoppingListService } from '../services/shopping-list/shopping-list.ser
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
+    HomePage,
+    AddShoppingItemPage,
+    EditShoppingListPage
   ],
   providers: [
     StatusBar,

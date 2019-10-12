@@ -1,7 +1,7 @@
 import { HomePage } from './../home/home';
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 
 import { Item } from '../../models/item/item.interface';
 import { ToastService } from '../../services/toast/toast.service';
@@ -12,7 +12,6 @@ import { ToastService } from '../../services/toast/toast.service';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 
 @Component({
   selector: 'page-edit-shopping-list',
@@ -36,7 +35,7 @@ export class EditShoppingListPage {
   saveItem(item: Item) {
     this.shoppingListService.editItem(item).then(()=>{
       this.toast.show(`${item.name} is saved!`, 1000);
-      this.navCtrl.setRoot('HomePage');
+      this.navCtrl.setRoot(HomePage);
     })
 
   }
@@ -44,7 +43,7 @@ export class EditShoppingListPage {
   deleteItem(item: Item) {
 this.shoppingListService.removeItem(item).then(()=>{
   this.toast.show(`${item.name} is removed!` , 1000);
-  this.navCtrl.setRoot('HomePage');
+  this.navCtrl.setRoot(HomePage);
 })
   }
 

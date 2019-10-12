@@ -1,18 +1,18 @@
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Component } from '@angular/core';
-import { NavController, IonicPage } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 import { Item } from '../../models/item/item.interface';
 
-@IonicPage()
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
+
 export class HomePage {
 
-  shoppingList : Observable<Item[]>;
+  shoppingList: Observable<Item[]>;
 
   constructor(public navCtrl: NavController,
     private shoppingListService: ShoppingListService) {

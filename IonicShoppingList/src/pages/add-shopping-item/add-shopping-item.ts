@@ -1,3 +1,4 @@
+import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Item } from './../../models/item/item.model';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -22,11 +23,19 @@ export class AddShoppingItemPage {
     price : undefined
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    private shoppingListService: ShoppingListService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddShoppingItemPage');
+  }
+
+  addItem(item : Item) {
+this.shoppingListService.addItem(item).then((ref) => {
+  this.navCtrl.setRoot('HomePage', {key: ref.key});
+})
   }
 
 }

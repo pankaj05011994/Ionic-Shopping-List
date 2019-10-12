@@ -1,5 +1,6 @@
+import { ToastService } from './../../services/toast/toast.service';
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
-import { Item } from './../../models/item/item.model';
+import { Item } from '../../models/item/item.interface';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
@@ -20,12 +21,13 @@ export class AddShoppingItemPage {
   item: Item = {
     name : '',
     quantity : undefined,
-    price : undefined
+    price : undefined,
   }
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private shoppingListService: ShoppingListService) {
+    private shoppingListService: ShoppingListService,
+    private toast: ToastService) {
   }
 
   ionViewDidLoad() {
@@ -34,6 +36,7 @@ export class AddShoppingItemPage {
 
   addItem(item : Item) {
 this.shoppingListService.addItem(item).then((ref) => {
+  this.toast.show(`${item.name} is added! `, 1000);
   this.navCtrl.setRoot('HomePage', {key: ref.key});
 })
   }

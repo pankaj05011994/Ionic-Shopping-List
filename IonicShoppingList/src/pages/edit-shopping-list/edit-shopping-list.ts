@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';

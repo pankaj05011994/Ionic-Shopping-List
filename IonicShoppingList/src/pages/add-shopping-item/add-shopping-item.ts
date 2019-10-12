@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { ToastService } from './../../services/toast/toast.service';
 import { ShoppingListService } from './../../services/shopping-list/shopping-list.service';
 import { Item } from '../../models/item/item.interface';
